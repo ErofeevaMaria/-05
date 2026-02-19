@@ -4,53 +4,231 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Главная страница администратора</title>
+    <title>Интерактивный учебник — теория и тест</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style-prototype.css">
 </head>
 <body>
     
 <header>
-
     <div class="header">
-    <img class="logo" src="logo.png" alt="логотип филиала КузГТУ г. Белово">
-    <h1>Главная страница администратора</h1>
- </div> <!-- header -->
+        <img class="logo" src="logo.png" alt="логотип филиала КузГТУ г. Белово">
+        <h1>Главная страница студента</h1>
+    </div> <!-- header -->
     
-<div class="wrap">
-    <nav>
-        <ul>
-            <li><a href="#">Главная страница</a></li>
-            <li><a href="#">Редактирование базы данных</a></li>
-            <li><a href="#">Бэкапирование</a></li>
-            <li><a href="#">Архивация</a></li>
-        </ul>
-    </nav>
-</div> <!--  wrap -->
-
+    <div class="wrap">
+        <nav>
+            <ul>
+                <li><a href="#">Главная страница</a></li>
+                <li><a href="#">Самостоятельные работы</a></li>
+                <li><a href="#">Прогресс</a></li>
+            </ul>
+        </nav>
+    </div> <!-- wrap -->
 </header>
 
+<!-- контейнер с учебником -->
 <div class="container">
-   <div class="hello-page">
-     
-<div class="hello-words">
-<p> Вы вошли с правами администратора.
-        Доступны все функции управления системой:
-        управление базой данных, резервным
-         копированием и архивацией.
-           </p>
 
- </div>  <!--hello-words-->
-
+<div class="sidebar">
+    <div class="bar">
+        <ul>
+            <li>
+                <a href="#" class="">
+                    теория
+                </a>
+            </li>
+    <li>
+       <a href="#" class="">
+            практические задания
+        </a> 
+    </li>
+    <li>
+        <a href="#page4" class="">
+            пройти тест
+        </a>
+    </li>
+        </ul>
     </div>
+ </div> <!-- sidebar -->
+
+    <div class="book-container">
+        <!-- Заголовок темы -->
+        <h1 class="theme-title">Тема: Запоминающие устройства ЭВМ.</h1>
+
+        <!-- Область страниц -->
+        <div class="pages">
+            <!-- Страница 1 (теория) -->
+            <div class="page active" id="page1">
+                <h2>Оперативная память</h2>
+                <p>Оперативная память (рисунок 1) – это энергозависимая память, служащая рабочей областью для процессора. 
+                    В ней во время работы хранятся программы и данные.</p>
+
+                <figure class="figure">
+                    <img src="оперативная память.png" alt="оперативная память">
+                    <figcaption>Рисунок 1. Оперативная память</figcaption>
+                </figure>
+
+            </div> <!-- page1 -->
+
+            <!-- Страница 2 (теория) -->
+            <div class="page" id="page2">
+                <h2>(Small Outline DIMM)</h2>
+                <p>SO-DIMM (Small Outline DIMM): 
+                    Уменьшенная версия DIMM,
+                     предназначенная для ноутбуков, 
+                     компактных ПК (NUC) и некоторых
+                      моделей материнских плат формата
+                       Mini-ITX. Ключевое отличие —
+                        размеры (рисунок 2).
+                    </p>
+                    <figure class="figure">
+                        <img src="sodimm.png" alt="Small Outline DIMM">
+                        <figcaption>Рисунок 2. Small Outline DIMM</figcaption>
+                    </figure>
+    
+            </div>
+
+            <!-- Страница 3 (теория) -->
+            <div class="page" id="page3">
+                <h2>Важнейшие характеристики и параметры </h2>
+                <p>Объём (емкость): Измеряется в гигабайтах (ГБ). Определяет, сколько данных может одновременно храниться для быстрого доступа. Для современных систем рекомендованный минимум — 8 ГБ, комфортный уровень — 16 ГБ, для игр и профессиональных задач — 32 ГБ и более.</p>
+                <p>Частота (скорость передачи данных): Измеряется в мегагерцах (МГц) или в виде спецификации (PC4-25600). Указывает, сколько операций передачи данных может выполнить модуль за секунду. Важно: модуль будет работать на частоте, поддерживаемой и процессором, и материнской платой (обычно на наименьшей из них).</p>
+                <p>Тайминги (латентность): Это задержки при выполнении операций, указываются в виде нескольких чисел (например, CL16-18-18-36). Наиболее важен первый параметр — CAS Latency (CL). Чем ниже тайминги при равной частоте, тем быстрее память откликается на запросы.</p>
+                <p>Профили разгона (XMP/EXPO): Подавляющее большинство модулей с частотой выше стандартной (например, DDR4-3200) требуют активации предустановленного профиля (Intel XMP или AMD EXPO) в BIOS/UEFI материнской платы. Без этого память будет работать на базовой частоте (например, 2133 МГц для DDR4).                </p>
+            </div>
+
+           <!-- Страница 4 (тест) -->
+<div class="page" id="page4">
+    <h2>Тест по теме: Запоминающие устройства ЭВМ</h2>
+    <form id="quiz-form">
+        <div class="question">
+            <p>1. Какая память является энергозависимой (теряет данные при отключении питания)?</p>
+            <label><input type="radio" name="q1" value="a"> Оперативная память (RAM)</label>
+            <label><input type="radio" name="q1" value="b"> Постоянная память (ROM)</label>
+            <label><input type="radio" name="q1" value="c"> Жесткий диск (HDD)</label>
+        </div>
+        
+        <div class="question">
+            <p>2. Как расшифровывается аббревиатура SO-DIMM?</p>
+            <label><input type="radio" name="q2" value="a"> Small Outline Dual In-line Memory Module</label>
+            <label><input type="radio" name="q2" value="b"> Standard Output Dual Input Memory Module</label>
+            <label><input type="radio" name="q2" value="c"> System Operation Dual Integrated Memory Module</label>
+        </div>
+        
+        <div class="question">
+            <p>3. Где обычно используется память типа SO-DIMM?</p>
+            <label><input type="radio" name="q3" value="a"> В серверах</label>
+            <label><input type="radio" name="q3" value="b"> В ноутбуках и компактных ПК</label>
+            <label><input type="radio" name="q3" value="c"> В видеокартах</label>
+        </div>
+        
+        <div class="question">
+            <p>4. Что такое тайминги (латентность) оперативной памяти?</p>
+            <label><input type="radio" name="q4" value="a"> Время отклика и задержки при выполнении операций</label>
+            <label><input type="radio" name="q4" value="b"> Максимальная частота памяти</label>
+            <label><input type="radio" name="q4" value="c"> Объем памяти в гигабайтах</label>
+        </div>
+        
+        <div class="question">
+            <p>5. Что произойдет, если не активировать профиль XMP/EXPO в BIOS для высокочастотной памяти?</p>
+            <label><input type="radio" name="q5" value="a"> Память не будет работать</label>
+            <label><input type="radio" name="q5" value="b"> Память будет работать на базовой частоте (например, 2133 МГц для DDR4)</label>
+            <label><input type="radio" name="q5" value="c"> Компьютер будет постоянно перезагружаться</label>
+        </div>
+        
+        <button type="button" id="submit-quiz">Проверить ответы</button>
+    </form>
+    <div id="quiz-result"></div>
 </div>
+        </div> <!--pages -->
+
+        <!-- Кнопки навигации -->
+        <div class="navigation">
+            <button id="prevBtn" disabled>← Назад</button>
+            <span id="page-indicator">Страница 1 из 4</span>
+            <button id="nextBtn">Вперёд →</button>
+        </div>
+    </div>
+ </div> <!--container -->
 
 <footer>
     <img class="img-footer block-p" src="logo.png" alt="логотип филиала КузГТУ г. Белово">
-<p class="block-p">Выполнено студенткой группы ИС-225.2 Ерофеевой М.Э. для ПП.ПМ.05</p>
+    <p class="block-p">Выполнено студенткой группы ИС-225.2 Ерофеевой М.Э. для ПП.ПМ.05</p>
 </footer>
+
+<script>
+    // Получаем элементы
+    const pages = document.querySelectorAll('.page');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const pageIndicator = document.getElementById('page-indicator');
+    let currentPage = 0;
+
+    // Функция обновления видимости страниц и кнопок
+    function updatePages() {
+        pages.forEach((page, index) => {
+            page.classList.toggle('active', index === currentPage);
+        });
+
+        // Обновляем индикатор
+        pageIndicator.textContent = `Страница ${currentPage + 1} из ${pages.length}`;
+
+        // Блокируем/разблокируем кнопки
+        prevBtn.disabled = currentPage === 0;
+        nextBtn.disabled = currentPage === pages.length - 1;
+    }
+
+    // Обработчики кнопок
+    prevBtn.addEventListener('click', () => {
+        if (currentPage > 0) {
+            currentPage--;
+            updatePages();
+        }
+    });
+
+    nextBtn.addEventListener('click', () => {
+        if (currentPage < pages.length - 1) {
+            currentPage++;
+            updatePages();
+        }
+    });
+
+    // Инициализация
+    updatePages();
+
+    // Логика теста (находится на последней странице)
+    const submitQuiz = document.getElementById('submit-quiz');
+    const quizResult = document.getElementById('quiz-result');
+
+    submitQuiz.addEventListener('click', () => {
+        // Правильные ответы для темы "Запоминающие устройства ЭВМ"
+        const correctAnswers = {
+            q1: 'a',    // Вопрос 1: Оперативная память (RAM)
+            q2: 'a',    // Вопрос 2: Small Outline Dual In-line Memory Module
+            q3: 'b',    // Вопрос 3: В ноутбуках и компактных ПК
+            q4: 'a',    // Вопрос 4: Время отклика и задержки при выполнении операций
+            q5: 'b'     // Вопрос 5: Память будет работать на базовой частоте
+        };
+
+        let score = 0;
+        let total = Object.keys(correctAnswers).length; // Теперь правильно считает 5 вопросов
+
+        // Проверяем каждый вопрос
+        for (let question in correctAnswers) {
+            const selected = document.querySelector(`input[name="${question}"]:checked`);
+            if (selected && selected.value === correctAnswers[question]) {
+                score++;
+            }
+        }
+
+        // Показываем результат
+        quizResult.textContent = `Вы ответили правильно на ${score} из ${total} вопросов.`;
+        quizResult.className = score === total ? 'result-success' : 'result-error';
+    });
+</script>
 
 </body>
 </html>
