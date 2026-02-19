@@ -9,36 +9,30 @@ body {
 }
 
 .header {
-    width: 1920px;
-    height: 254px;
-    /* display: grid;
-    grid-template-columns: 204px 370px;
-    grid-gap: 20px; */
-
-display: flex;
-
-    background-color: #0085B2;
-
     width: 100%;
+    height: 254px;
+    display: flex;
+    background-color: #0085B2;
+    align-items: center;
 }
 
 .logo {
     width: 209px;
-    height: 204px;
-    margin: auto;
-    margin-left: 10px;
+    height: auto;
+    max-width: 30vw;
+    margin-left: 15px;
     }
 
-.header h1 {
-    font-size: 32px;
-    font-weight: normal;
-    color: #fff;
-    margin: 50px;
-    text-align: center;
-    flex: 1;
+    .header h1 {
+        font-size: clamp(1rem, 3vw, 2rem);
+        font-weight: normal;
+        color: #fff;
+        text-align: center;
+        flex: 1;
+    }
+    
 
-}
-
+/* верхняя навигация */
 nav {
     width: 100%;
 }
@@ -46,17 +40,18 @@ nav {
 nav ul {
     list-style-type: none;
 	padding-left: 0;
-	margin-bottom: 0;
+	margin: 0;
     display: flex;
+    flex-wrap: wrap;
 }
 
 nav li {
     border: 1px solid #0085B2;
-    display: inline-block;
-    flex: 1;
-    padding: 25px;
+    flex: 1 1 auto;
+    min-width: 150px;
+    padding: 15px 10px;
     text-align: center;
-    font-size: 20px;
+    font-size: clamp(0.9rem, 4vw, 1.25rem);
 }
 
 nav li a {
@@ -65,12 +60,8 @@ nav li a {
     color: #0085B2;
 }
 
-nav li a:hover {
+nav li a:hover, nav li:hover, .bar li a:hover, .bar li:hover {
     color: #fff;
-    background-color: #0085B2;
-}
-
-nav li:hover {
     background-color: #0085B2;
 }
 
@@ -80,65 +71,220 @@ nav li:hover {
     width: 100%;
 }
 
+    .container {
+        display: flex;
+    }
 
-.container {
-/* width: 100%;
-height: 100%; */
-/* border: 5px solid red; */
-display: flex;
-    justify-content: center;
-    align-items: center;    
+.bar ul {
+        list-style-type: none;
+        padding-left: 0;
+        margin: 0;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .bar li {
+        border: 1px solid #0085B2;
+        flex: 1 1 auto;
+        min-width: 150px;
+        padding: 15px 10px;
+        text-align: center;
+        font-size: clamp(0.9rem, 4vw, 1.25rem);
+        margin-top: 10px;
+    }
+
+.bar li a {
+        display: block;
+        text-decoration: none;
+        color: #0085B2;
+    }
+
+/* стили от дипсика */
+
+.sidebar {
+    width: 400px; /* ширина области с кнопками */
+    margin: 30px;
+    margin-top: 100px;
 }
 
-.hello-page {
-/* border: 3px solid #0085B2; */
-
-border-top: 3px solid #0085B2;
-    border-right: 3px solid #0085B2;
-    border-left: 3px solid #0085B2;
-
-
-margin-top: 30px;
-width: 1220px;
-height: 675px;
-
+  
+   .book-container {
+    /* max-width: 900px; */
+    margin: 40px auto;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    padding: 30px;
+    flex: 1; /* занимает оставшееся пространство */
 }
 
-.hello-words {
+.theme-title {
     text-align: center;
-
-    margin-top: 300px;
-
-    font-size: 30px;
-    color: #0085B2;
-
-    padding-right: 100px;
-    padding-left: 100px;
-
-    /* padding: 100px; */
+    margin-bottom: 30px;
+    color: #333;
+    font-weight: 300;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
 }
+
+.pages {
+    position: relative;
+    min-height: 450px;
+    overflow: hidden;
+}
+
+.page {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    line-height: 1.6;
+    color: #444;
+}
+
+.page.active {
+    display: block;
+    opacity: 1;
+}
+
+.page h2 {
+    margin-bottom: 15px;
+    color: #2c3e50;
+}
+
+.page p {
+    margin-bottom: 15px;
+    /* font-size: 18px; */
+}
+
+/* рисунки в теории */
+
+.figure {
+    margin: 20px 0;        /* отступы сверху и снизу */
+    text-align: center;    /* центрируем содержимое */
+}
+
+.figure img {
+    max-width: 100%;       /* чтобы картинка не вылезала за пределы */
+    height: auto;          /* сохраняем пропорции */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+ .figure figcaption {
+    margin-top: 8px;           
+font-size: 18px;           
+color: #666;               
+font-style: italic;       
+    text-align: center;        
+} 
+
+
+/* навигация по теории */
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+}
+
+button {
+    background: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s;
+}
+
+button:hover:not(:disabled) {
+    background: #2980b9;
+}
+
+button:disabled {
+    background: #bdc3c7;
+    cursor: not-allowed;
+}
+
+#page-indicator {
+    font-size: 16px;
+    color: #7f8c8d;
+}
+
+/* Стили для теста */
+.question {
+    margin-bottom: 25px;
+    padding: 15px;
+    background: #f9f9f9;
+    border-radius: 5px;
+}
+
+.question p {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.question label {
+    display: block;
+    margin: 8px 0;
+    cursor: pointer;
+}
+
+.question input[type="radio"] {
+    margin-right: 8px;
+}
+
+#submit-quiz {
+    background: #27ae60;
+    width: 100%;
+    margin-top: 10px;
+}
+
+#submit-quiz:hover {
+    background: #2ecc71;
+}
+
+#quiz-result {
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.result-success {
+    background: #d4edda;
+    color: #155724;
+}
+
+.result-error {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+
+/* подвал */
 
 footer {
     background-color: #222226;
     display: flex;
     flex-direction: column;
-    align-items: center; 
+    align-items: center;
+    padding: 15px 10px;
 }
 
 footer p {
-font-size: 20px;
+font-size: clamp(0.8rem, 4vw, 1.25rem);
 color: #fff;
 margin-top: 10px;
 margin-bottom: 15px;
+text-align: center;
+max-width: 90%;
 }
 
 .img-footer {
 width: 86px;
-height: 84px;
-margin: auto;
+height: auto;
 margin-top: 15px;
 }
-
-/* .block-p {
-    display: block;
-} */
